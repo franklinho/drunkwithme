@@ -9,3 +9,7 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default.
     }
 }
+
+
+FACEBOOK_APP_ID              = ''
+FACEBOOK_API_SECRET          = ''
