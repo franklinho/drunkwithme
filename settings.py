@@ -147,9 +147,8 @@ AUTHENTICATION_BACKENDS = (
     'social_auth.backends.facebook.FacebookBackend',
 )
 
-LOGIN_URL          = '/login-form/'
-LOGIN_REDIRECT_URL = '/logged-in/'
-LOGIN_ERROR_URL    = '/login-error/'
+LOGIN_URL          = '/login/facebook/'
+FACEBOOK_EXTENDED_PERMISSIONS = ['publish_actions']
 
 try:
     from local_settings import *
