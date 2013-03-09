@@ -94,7 +94,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'drunkwithme.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'web.wsgi.application'
+WSGI_APPLICATION = 'drunkwithme.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -110,7 +110,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mobile',
-    'django-social-auth',
+    'social_auth',
     'south'
 )
 
