@@ -110,7 +110,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mobile',
-    'django-social-auth',
+    'social_auth',
     'south'
 )
 
