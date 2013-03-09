@@ -110,16 +110,20 @@
         map = new google.maps.Map(document.getElementById('map_canvas'),
             mapOptions);
 
+        var leprechaun='leprechaun.png';
+
         // Try HTML5 geolocation
         if(navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = new google.maps.LatLng(position.coords.latitude,
                                              position.coords.longitude);
 
-            var infowindow = new google.maps.InfoWindow({
+            var marker = new google.maps.Marker({
               map: map,
               position: pos,
-              content: 'Location found using HTML5.'
+              animation:google.maps.Animation.BOUNCE,
+              icon: leprechaun,
+              title: 'This is your location'
             });
 
             map.setCenter(pos);
@@ -141,7 +145,7 @@
 
         var options = {
           map: map,
-          position: new google.maps.LatLng(60, 105),
+          position: new google.maps.LatLng(37.793796,-122.410548),
           content: content
         };
 
