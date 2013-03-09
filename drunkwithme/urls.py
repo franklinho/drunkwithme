@@ -4,6 +4,7 @@ from django.conf import settings
 
 urlpatterns = patterns('',
     url(r'', include('mobile.urls')),
+    url(r'', include('social_auth.urls')),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT}),
 )

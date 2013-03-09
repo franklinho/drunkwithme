@@ -109,7 +109,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mobile'
+    'mobile',
+    'django-social-auth',
+    'south'
 )
 
 # A sample logging configuration. The only tangible logging
@@ -140,6 +142,14 @@ LOGGING = {
         },
     }
 }
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.facebook.FacebookBackend',
+)
+
+LOGIN_URL          = '/login-form/'
+LOGIN_REDIRECT_URL = '/logged-in/'
+LOGIN_ERROR_URL    = '/login-error/'
 
 try:
     from local_settings import *
