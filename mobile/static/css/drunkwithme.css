@@ -30,6 +30,21 @@
         background:#1FC219;
       }
 
+      #slidedownmenu a:link{
+        text-decoration:none;
+        color:white;
+      }
+
+      #slidedownmenu a:visited{
+        text-decoration:none;
+        color:white;
+      }
+
+      #slidedownmenu a:active{
+        text-decoration:none;
+        color:white;
+      }
+
       #slidedownmenu .handle {
         -webkit-user-select:none;
         position:absolute;
