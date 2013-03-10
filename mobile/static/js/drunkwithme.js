@@ -1,7 +1,7 @@
 
 // MENU
 var menu;
-
+ 
 function loaded() {
     document.addEventListener('touchmove', function(e){ e.preventDefault(); e.stopPropagation(); });
     menu = new slideInMenu('slidedownmenu', true);
@@ -76,5 +76,6 @@ function handleNoGeolocation(errorFlag) {
     var infowindow = new google.maps.InfoWindow(options);
     map.setCenter(options.position);
 }
+
 
 google.maps.event.addDomListener(window, 'load', initialize);

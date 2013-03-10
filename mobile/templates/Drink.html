@@ -1,8 +1,23 @@
 {% extends "base.html" %}
 
 {% block body %}
+<!-- 	<audio>
+	<source src="{{STATIC_URL}}drink/drink.mp3"></source>
+</audio>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+	var audio = $('audio')[0];
+
+	$('#drinkbutton').on('click')(function(){
+	    audio.play();
+	});
+</script> -->
+
+
+
 		<div id="drinkbutton">
-			<a href="#" class="icon-location"><img src="http://aux.iconpedia.net/uploads/12273114371932888602.png"></a>
+			<a href="#" class="icon-location"><img src="{{STATIC_URL}}img/drinkbutton.png"></a>
 		</div>
 
 		<div id='options'>

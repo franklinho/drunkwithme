@@ -11,7 +11,7 @@
  * 
  */
 
-function slideInMenu (el, opened) {
+function slideInMenu (el, closed) {
 	this.container = document.getElementById(el);
 	this.handle = this.container.querySelector('.handle');
 	
