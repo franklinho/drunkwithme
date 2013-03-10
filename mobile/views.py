@@ -25,3 +25,9 @@ def drink(request):
 
 def whoami(request):
     return HttpResponse(request.user)
+
+def rank(request):
+    return HttpResponse("Not Implemented Yet")
+
+def stats(request):
+    return HttpResponse("Not Implemented Yet")
