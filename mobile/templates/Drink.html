@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 
 {% block body %}
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script>
-		var audio = $('audio')[0];
+<!-- 	<audio>
+	<source src="{{STATIC_URL}}drink/drink.mp3"></source>
+</audio>
 
-		$('#drinkbutton').on('click')(function(){
-		    audio.play();
-		});
-	</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+	var audio = $('audio')[0];
 
-	<audio>
-		<source src="{{STATIC_URL}}drink/drink.mp3"></source>
-	</audio>
+	$('#drinkbutton').on('click')(function(){
+	    audio.play();
+	});
+</script> -->
+
+
 
 		<div id="drinkbutton">
 			<a href="#" class="icon-location"><img src="{{STATIC_URL}}img/drinkbutton.png"></a>
