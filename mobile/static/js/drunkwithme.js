@@ -4,8 +4,7 @@ var menu;
  
 function loaded() {
     document.addEventListener('touchmove', function(e){ e.preventDefault(); e.stopPropagation(); });
-    menu = new slideInMenu('slidedownmenu', true);
-    menu.close();
+    menu = new slideInMenu('slidedownmenu', false);
 }
 document.addEventListener('DOMContentLoaded', loaded);
 
