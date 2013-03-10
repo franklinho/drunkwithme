@@ -7,11 +7,9 @@ import facebook
 
 from django.contrib.auth.decorators import login_required
 
-@login_required
 def index(request):
     return render_to_response("HelloMap.html",{},RequestContext(request))
 
-@login_required
 def drink_action(request,drink_id):
     graph = facebook.GraphAPI(request.user.social_auth.all()[0].extra_data['access_token'])
     drink = get_object_or_404(Drink,pk=drink_id)
@@ -21,6 +19,7 @@ def drink_action(request,drink_id):
 def map(request):
     return render_to_response("HelloMap.html",{},RequestContext(request))
 
+@login_required
 def drink(request):
     return render_to_response("Drink.html",{},RequestContext(request))
 
