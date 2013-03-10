@@ -103,7 +103,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
-    "main.context_processors_domain_url"
+    "main.context_processors.domain_url"
     )
 
 TEMPLATE_DIRS = (
