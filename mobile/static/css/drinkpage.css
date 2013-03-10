@@ -45,12 +45,6 @@
 	height:240px;
 }
 
-body {
-	overflow:hidden;
-	background-color: #1FC219;
-	font-family:arial,helvetica;
-}
-
 #options {
 	margin: auto;
 	position:absolute;
@@ -60,6 +54,6 @@ body {
 	font-weight:bold;
 }
 
-select{
+#options select{
 	width:300px;
 }
