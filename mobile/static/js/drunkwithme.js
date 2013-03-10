@@ -1,4 +1,4 @@
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 // MENU
 var menu;
 
@@ -76,5 +76,13 @@ function handleNoGeolocation(errorFlag) {
     var infowindow = new google.maps.InfoWindow(options);
     map.setCenter(options.position);
 }
+
+var audio = $('audio')[0];
+
+$('#drinkbutton').on('click')(function(){
+    audio.play();
+});
+
+
 
 google.maps.event.addDomListener(window, 'load', initialize);
