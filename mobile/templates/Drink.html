@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 
 {% block body %}
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		var audio = $('audio')[0];
+
+		$('#drinkbutton').on('click')(function(){
+		    audio.play();
+		});
+	</script>
+
 	<audio>
 		<source src="{{STATIC_URL}}drink/drink.mp3"></source>
 	</audio>
