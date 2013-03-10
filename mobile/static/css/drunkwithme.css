@@ -3,8 +3,11 @@
         margin: 0;
         padding: 0;
         overflow:hidden;
-        background-color: #8F8F8F;
         font-family:arial,helvetica;
+      }
+
+      body {
+                background-color: #8F8F8F;
       }
 
       #map_canvas {
