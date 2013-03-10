@@ -6,7 +6,6 @@ urlpatterns = patterns('mobile.views',
     url(r'^map/$', 'map',name="map"),
     url(r'^drink-action/(?P<drink_id>.*)/$', 'drink_action',name="drink_action"),
     url(r'^checkin-action/(?P<bar_id>.*)/$', 'checkin_action',name="checkin_action"),
-    url(r'^whoami/$', 'whoami',name="mobile_whoami"),
     url(r'^rank/$', 'rank',name="rank"),
     url(r'^stats/$', 'stats',name="stats")
 )
