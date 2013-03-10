@@ -15,6 +15,7 @@
         height: 100%;
         width:100%;
         padding:0;
+        z-index:1;
       }
 
       ul, li, div {
@@ -155,18 +156,18 @@
       }
 
       #checkin {
-          text-align:center;
           font-weight:bold;
           background-color:#1FC219;
-          width:200px;
+          width:30%;
           height:40px;
           font-size:20px;
           -webkit-border-radius: 15px;
           border: 5px solid #009900;
-          padding: 5px;
-          margin:auto;
           color:white;
+          padding:0px;
+          margin:0px;
           position:absolute;
-          margin:auto;
-          bottom:5%
+          bottom:4%;
+          left:35%;
+          z-index:2;
       }
