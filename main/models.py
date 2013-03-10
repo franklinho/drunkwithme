@@ -1,5 +1,8 @@
 from django.db import models
 from django.core.urlresolvers import reverse
+from django.contrib.auth.models import User
+
+from main.constants import LEVEL_CHOICES
 
 # Create your models here.
 class Drink(models.Model):
@@ -22,3 +25,19 @@ class Bar(models.Model):
     @property
     def facebook_object_url(self):
         return reverse("main_objects_bar",kwargs={'bar_id':self.id})
+
+class UserProfile(models.Model):
+    user = models.ForeignKey(User)
+    drunk_level = models.IntegerField(default=0,choices = LEVEL_CHOICES)
+
+    @classmethod
+    def get_or_create_user_profile(cls,user):
+        try:
+            profile = cls.objects.get(user=user)
+        except cls.DoesNotExist:
+            profile = cls(user=user)
+            profile.save()
+
+        return profile
+        
+        
