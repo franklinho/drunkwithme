@@ -10,11 +10,18 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render_to_response("HelloMap.html",{},RequestContext(request))
 
+@login_required
 def drink_action(request,drink_id):
     graph = facebook.GraphAPI(request.user.social_auth.all()[0].extra_data['access_token'])
     drink = get_object_or_404(Drink,pk=drink_id)
     graph.put_object("me","drunkwithmeapp:take",drink="%s%s" % (settings.DOMAIN_URL,drink.facebook_object_url))
     return HttpResponse("OK")
+
+@login_required
+def checkin_action(request,bar_id):
+    graph = facebook.GraphAPI(request.user.social_auth.all()[0].extra_data['access_token'])
+    bar = get_object_or_404(Bar,pk=bar_id)
+    graph.put_object("me","drunkwithmeapp:reach",bar="%s%s" % (settings.DOMAIN_URL,drink.facebook_object_url))
     
 def map(request):
     return render_to_response("HelloMap.html",{},RequestContext(request))
