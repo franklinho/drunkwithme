@@ -19,7 +19,6 @@ def drink_action(request,drink_id):
 def map(request):
     return render_to_response("HelloMap.html",{},RequestContext(request))
 
-@login_required
 def drink(request):
     return render_to_response("Drink.html",{},RequestContext(request))
 
