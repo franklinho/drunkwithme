@@ -158,7 +158,7 @@
       #checkin {
           font-weight:bold;
           background-color:#1FC219;
-          width:30%;
+          width:50%;
           height:40px;
           font-size:20px;
           -webkit-border-radius: 15px;
@@ -168,6 +168,10 @@
           margin:0px;
           position:absolute;
           bottom:4%;
-          left:35%;
+          left:25%;
           z-index:2;
+      }
+
+      #checkin:active {
+          background-color:#1CAD17;
       }
