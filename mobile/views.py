@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render_to_response("HelloMap.html",{},RequestContext(request))
 
-def check_in(request):
+def drink(request):
     graph = facebook.GraphAPI(request.user.social_auth.all()[0].extra_data['access_token'])
 
 def map(request):

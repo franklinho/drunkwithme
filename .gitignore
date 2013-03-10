@@ -4,3 +4,4 @@
 myenv
 media/.+
 local_settings.py
+main/migrations
