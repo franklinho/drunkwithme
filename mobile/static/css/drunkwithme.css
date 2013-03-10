@@ -15,6 +15,7 @@
         height: 100%;
         width:100%;
         padding:0;
+        z-index:1;
       }
 
       ul, li, div {
@@ -166,4 +167,5 @@
           color:white;
           position:absolute;
           bottom:4%;
+          z-index:2;
       }
