@@ -13,3 +13,4 @@ DATABASES = {
 
 FACEBOOK_APP_ID              = ''
 FACEBOOK_API_SECRET          = ''
+DOMAIN_URL=""
