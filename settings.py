@@ -36,6 +36,7 @@ USE_L10N = True
 USE_TZ = True
 
 
+import os
 dir_path = os.path.normpath(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_ROOT = '%s/media' % dir_path
 MEDIA_URL = '/media/'
