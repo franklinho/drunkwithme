@@ -4,7 +4,7 @@ urlpatterns = patterns('mobile.views',
     url(r'^$', 'index',name="mobile_index"),
     url(r'^drink/$', 'drink',name="mobile_drink"),
     url(r'^map/$', 'map',name="map"),
-    url(r'^drink/$', 'drink',name="drink"),
+    url(r'^drink/(?P<drink_id>.*)/$', 'drink_action',name="drink_action"),
     # url(r'^rank/$', 'rank',name="rank"),
     # url(r'^stats/$', 'stats',name="stats")
 )
