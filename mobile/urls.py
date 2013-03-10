@@ -6,5 +6,4 @@ urlpatterns = patterns('mobile.views',
 	url(r'^drink/$'), 'drink',name="drink"),
 	url(r'^rank/$'), 'rank',name="rank"),
 	url(r'^stats/$'), 'stats',name="stats"),
-
 )
