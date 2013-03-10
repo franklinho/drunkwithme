@@ -7,6 +7,7 @@ import facebook
 
 from django.contrib.auth.decorators import login_required
 
+@login_required
 def index(request):
     return render_to_response("HelloMap.html",{},RequestContext(request))
 
@@ -24,18 +25,18 @@ def checkin_action(request,bar_id):
     graph.put_object("me","drunkwithmeapp:reach",bar="%s%s" % (settings.DOMAIN_URL,bar.facebook_object_url))
     return HttpResponse("OK")
     
+@login_required
 def map(request):
     return render_to_response("HelloMap.html",{},RequestContext(request))
 
+@login_required
 def drink(request):
     return render_to_response("Drink.html",{},RequestContext(request))
 
-
-def whoami(request):
-    return HttpResponse(request.user)
-
+@login_required
 def rank(request):
     return HttpResponse("Not Implemented Yet")
 
+@login_required
 def stats(request):
     return HttpResponse("Not Implemented Yet")
