@@ -7,10 +7,12 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>
-		var audio = $('audio')[0];
+		$(document).ready(function() {
+			var audio = $('audio')[0];	
 
-		$('#drinkbutton').click(function(){
-		    audio.play()
+			$('#drinkbutton').click(function(){
+			    audio.play()
+			});
 		});
 	</script>
 
