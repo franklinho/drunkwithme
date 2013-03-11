@@ -180,3 +180,68 @@
       #checkin:active {
           background-color:#1CAD17;
       }
+
+      #checkinmodal {
+          position:absolute;
+          width:60%;
+          height:30%;
+          background-color:#8F8F8F;
+          border: 5px solid: #B0B0B0;
+          margin:auto;
+          left:20%;
+          top:30%;
+          text-align:center;
+          font-family:arial,helvetica;
+          font-weight:bold;
+          -webkit-border-radius: 15px;
+          border: 5px solid #009900;
+          display:inline;
+      }
+
+      #checkinmodal label {
+          color:white;
+          position:absolute;
+          top:10%;
+          width:50%;
+          left:25%;
+          font-size: 25px;
+      }
+
+      #checkinmodal select {
+          position:absolute;
+          top: 50%;
+          width: 50%;
+          left: 25%;
+      }
+
+      #checkinmodal #checkin {
+          font-weight:bold;
+          background-color:#1FC219;
+          width:50%;
+          height:40px;
+          font-size:20px;
+          -webkit-border-radius: 15px;
+          border: 5px solid #009900;
+          color:white;
+          padding:0px;
+          margin:0px;
+          position:absolute;
+          bottom:10%;
+          left:25%;
+          z-index:2;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -o-user-select: none;
+          user-select: none;  
+      }
+
+      #checkinmodal #checkin:active {
+          background-color:#1CAD17;
+      }
+
+      #checkinmodal #closebutton {
+          position:absolute;
+          right:1%;
+          top:1%;
+      }
