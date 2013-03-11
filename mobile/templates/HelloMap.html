@@ -13,5 +13,18 @@
        <button id="checkin">Check In</button>
        <img id="closebutton" src="http://www.autoweek.com/assets/losangeles/closeButton.png">
    </div>
+
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <script>
+       $(document).ready(function() {
+          $('#checkin').click(function(){
+            $('#checkinmodal').show();
+          });
+          $('#checkinmodal #closebutton').click(function(){
+              $('#checkinmodal').hide();
+          });
+       });
+
+   </script>
 {% endblock %}
 

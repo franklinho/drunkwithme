@@ -189,13 +189,13 @@
           border: 5px solid: #B0B0B0;
           margin:auto;
           left:10%;
-          top:10%;
+          top:25%;
           text-align:center;
           font-family:arial,helvetica;
           font-weight:bold;
           -webkit-border-radius: 15px;
           border: 5px solid #009900;
-          display:inline;
+          display:none;
           z-index:3;
       }
 
