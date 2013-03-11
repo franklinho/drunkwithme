@@ -35,7 +35,7 @@ def drink(request):
 
 @login_required
 def rank(request):
-    return HttpResponse("Not Implemented Yet")
+    return render_to_response("Rank.html",{},RequestContext(request))
 
 @login_required
 def stats(request):
