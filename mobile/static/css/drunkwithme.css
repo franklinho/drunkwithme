@@ -183,13 +183,13 @@
 
       #checkinmodal {
           position:absolute;
-          width:60%;
-          height:30%;
+          width:80%;
+          height:50%;
           background-color:#8F8F8F;
           border: 5px solid: #B0B0B0;
           margin:auto;
-          left:20%;
-          top:30%;
+          left:25%;
+          top:10%;
           text-align:center;
           font-family:arial,helvetica;
           font-weight:bold;
