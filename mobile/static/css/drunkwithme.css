@@ -253,6 +253,7 @@
           font-family:arial,helvetica;
           font-weight:bold;
           position:relative;
+          top:28px;
       }
 
       #ranking dd {
