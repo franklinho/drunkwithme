@@ -196,6 +196,7 @@
           -webkit-border-radius: 15px;
           border: 5px solid #009900;
           display:inline;
+          z-index:3;
       }
 
       #checkinmodal label {
