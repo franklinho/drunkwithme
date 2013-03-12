@@ -218,7 +218,10 @@
       #checkinmodal #success {
         position:absolute;
         display:none;
-        top:40%;
+        top:45%;
+        color:white;
+        text-align:center;
+        font-weight:bold;
       }
 
       #checkinmodal #checkin {
