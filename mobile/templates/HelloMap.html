@@ -23,6 +23,9 @@
           $('#checkinmodal #closebutton').click(function(){
               $('#checkinmodal').hide();
           });
+          $('#checkinmodal #checkin').click(function(){
+              $.ajax({'url':'/checkin-action/2/'})
+          })
        });
 
    </script>
