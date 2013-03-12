@@ -216,6 +216,7 @@
       }
 
       #checkinmodal #success {
+        position:absolute;
         display:none;
         top:40%;
       }
