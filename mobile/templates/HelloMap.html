@@ -10,6 +10,7 @@
           <option value="bar2">Bar 2</option>
           <option value="bar3">Bar 3</option>
         </select>
+        <div id="success">Check In Successful!</div>
        <button id="checkin">Check In</button>
        <img id="closebutton" src="http://www.autoweek.com/assets/losangeles/closeButton.png">
    </div>
@@ -22,10 +23,11 @@
           });
           $('#checkinmodal #closebutton').click(function(){
               $('#checkinmodal').hide();
+              $('#checkinmodal #success').hide();
           });
           $('#checkinmodal #checkin').click(function(){
               $.ajax({'url':'/checkin-action/2/'});
-              $('#checkinmodal').hide();
+              $('#checkinmodal #success').show();
           })
        });
 

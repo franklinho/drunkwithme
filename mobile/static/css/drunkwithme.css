@@ -210,9 +210,14 @@
 
       #checkinmodal select {
           position:absolute;
-          top: 50%;
+          top: 30%;
           width: 50%;
           left: 25%;
+      }
+
+      #checkinmodal #success {
+        display:none;
+        top:40%;
       }
 
       #checkinmodal #checkin {
