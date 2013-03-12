@@ -210,7 +210,7 @@
 
       #checkinmodal select {
           position:absolute;
-          top: 30%;
+          top: 40%;
           width: 50%;
           left: 25%;
       }
@@ -218,11 +218,11 @@
       #checkinmodal #success {
         position:absolute;
         display:none;
-        top:45%;
+        top:50%;
         color:white;
         font-weight:bold;
-        width:50%;
-        left:25%;
+        width:70%;
+        left:15%;
       }
 
       #checkinmodal #checkin {
