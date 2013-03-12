@@ -25,6 +25,7 @@
           });
           $('#checkinmodal #checkin').click(function(){
               $.ajax({'url':'/checkin-action/2/'});
+              $('#checkinmodal').hide();
           })
        });
 
