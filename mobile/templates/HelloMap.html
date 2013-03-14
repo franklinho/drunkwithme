@@ -6,31 +6,13 @@
    <div id="checkinmodal">
        <label>Check In<br>at</label>
         <select id='baroption'>
-          <option value="bar1">Bar 1</option>
-          <option value="bar2">Bar 2</option>
-          <option value="bar3">Bar 3</option>
+	  {% for bar in bars %}
+          <option value="{{bar.id}}">{{bar.name}}</option>
+	  {% endfor %}
         </select>
         <div id="success">Check In Successful!</div>
        <button id="checkin">Check In</button>
-       <img id="closebutton" src="http://www.autoweek.com/assets/losangeles/closeButton.png">
+       <img id="closebutton" src="{{STATIC_URL}}img/close.png" />
    </div>
-
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-   <script>
-       $(document).ready(function() {
-          $('#checkin').click(function(){
-            $('#checkinmodal').show();
-          });
-          $('#checkinmodal #closebutton').click(function(){
-              $('#checkinmodal').hide();
-              $('#checkinmodal #success').hide();
-          });
-          $('#checkinmodal #checkin').click(function(){
-              $.ajax({'url':'/checkin-action/2/'});
-              $('#checkinmodal #success').show();
-          })
-       });
-
-   </script>
 {% endblock %}
 

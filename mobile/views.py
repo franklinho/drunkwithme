@@ -9,7 +9,8 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
-    return render_to_response("HelloMap.html",{},RequestContext(request))
+    bars = Bar.objects.all().order_by("name")
+    return render_to_response("HelloMap.html",{'bars':bars},RequestContext(request))
 
 @login_required
 def drink_action(request,drink_id):
@@ -31,7 +32,8 @@ def map(request):
 
 @login_required
 def drink(request):
-    return render_to_response("Drink.html",{},RequestContext(request))
+    drink_options = Drink.objects.all().order_by("name")
+    return render_to_response("Drink.html",{'drink_options':drink_options},RequestContext(request))
 
 @login_required
 def rank(request):

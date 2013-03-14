@@ -1,42 +1,20 @@
 {% extends "base.html" %}
 
 {% block body %}
-	<audio>
-		<source src="{{STATIC_URL}}mp3/drink.mp3"></source>
-	</audio>
+<audio id="drinkaudio">
+  <source src="{{STATIC_URL}}mp3/drink.mp3"></source>
+</audio>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script>
-		$(document).ready(function() {
-			var audio = $('audio')[0];	
+<div id="drinkbutton">
+  <a href="#" class="icon-location"><img src="{{STATIC_URL}}img/drinkbutton.png"></a>
+</div>
 
-			$('#drinkbutton').click(function(){
-			    audio.play()
-			});
-			$.ajax({'url':'/drink-action/2/'})
-		});
-	</script>
-
-
-
-		<div id="drinkbutton">
-			<a href="#" class="icon-location"><img src="{{STATIC_URL}}img/drinkbutton.png"></a>
-		</div>
-
-		<div id='options'>
-			<label>Drink Type</label>
-			<select id='drinkoption'>
-				<option value="carbomb">Carbomb</option>
-				<option value="baileys">Baileys</option>
-				<option value="guinness">Guinness</option>
-				<option value="jameson">Jameson</option>
-			</select>
-			<br>
-			<label>Bar</labe>
-			<select id='baroption'>
-				<option value="bar1">Bar 1</option>
-				<option value="bar2">Bar 2</option>
-				<option value="bar3">Bar 3</option>
-			</select>
-		</div>
+<div id='options'>
+  <label>Drink Type</label>
+  <select id='drinkoption'>
+    {% for drink in drink_options %}
+    <option value="{{drink.id}}">{{drink.name}}</option>
+    {% endfor %}
+  </select>
+</div>
 {% endblock %}

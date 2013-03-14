@@ -3,6 +3,10 @@
     {
       "name" : "Car Bomb",
       "image" : "carbomb.jpg"
+    },
+    {
+      "name" : "Test Drink",
+      "image" : "carbomb.jpg"
     }  
   ]  
 }

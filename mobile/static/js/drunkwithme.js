@@ -12,6 +12,28 @@ document.addEventListener('DOMContentLoaded', loaded);
 var map;
 
 function initialize() {
+
+    $('#checkin').click(function(){
+			    $('#checkinmodal').show();
+			});
+    $('#checkinmodal #closebutton').click(function(){
+					      $('#checkinmodal').hide();
+					      $('#checkinmodal #success').hide();
+					  });
+
+    $('#checkinmodal #checkin').click(function(){
+					  var value = $('#baroption').val();
+					  $.ajax({'url':'/checkin-action/'+value+'/'});
+					  $('#checkinmodal #success').show();
+				      });
+
+    $('#drinkbutton').click(function(event) {
+				event.preventDefault();
+				$('#drinkaudio')[0].play();
+				var value = $('#drinkoption').val();
+				$.ajax({'url':'/drink-action/'+value+'/'});
+			    });
+
     var mapOptions = {
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
