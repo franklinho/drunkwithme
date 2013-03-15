@@ -5,6 +5,14 @@
       "image" : "carbomb.jpg"
     },
     {
+      "name" : "Jameson",
+      "image" : "carbomb.jpg"
+    },
+    {
+      "name" : "Guiness",
+      "image" : "carbomb.jpg"
+    },    
+    {
       "name" : "Test Drink",
       "image" : "carbomb.jpg"
     }  
