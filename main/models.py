@@ -26,6 +26,14 @@ class Bar(models.Model):
     def facebook_object_url(self):
         return reverse("main_objects_bar",kwargs={'bar_id':self.id})
 
+class User(models.Model):
+    name = models.CharField(max_length=256)
+    rank = models.IntegerField()
+    drinks = models.IntegerField()
+    bars = models.IntegerField()
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+
 class UserProfile(models.Model):
     user = models.ForeignKey(User)
     drunk_level = models.IntegerField(default=0,choices = LEVEL_CHOICES)
