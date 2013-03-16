@@ -33,6 +33,8 @@ if(navigator.geolocation) {
         										 icon: leprechaun,
 										     });
 
+                         var activeInfoWindow;
+
 						 {% for bar in bars %}
 						 var bar{{bar.id}}content ="<div style='font-weight:bold; font-family:aria,helvetica;'>"+
                             '<p>{{bar.name}}<br>'+
@@ -53,7 +55,9 @@ if(navigator.geolocation) {
                                                  icon: pinImage,
 											 });
                         google.maps.event.addListener(bar{{bar.id}}, 'click', function() {
+                                           activeInfoWindow.close();
                                            bar{{bar.id}}infoWindow.open(map,bar{{bar.id}});
+                                           activeInfoWindow = bar{{bar.id}}infoWindow;
                                            });   
 
 						 {% endfor %}
