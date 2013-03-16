@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
 from django.core.files.images import ImageFile
-from main.models import Drink
+from mobile.models import Drink
 import os
 import json
 

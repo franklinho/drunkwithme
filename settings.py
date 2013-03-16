@@ -90,8 +90,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
-    "django.contrib.messages.context_processors.messages",
-    "main.context_processors.domain_url"
+    "django.contrib.messages.context_processors.messages"
     )
 
 TEMPLATE_DIRS = (
@@ -109,8 +108,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'mobile',
     'social_auth',
-    'south',
-    'main'
+    'south'
 )
 
 # A sample logging configuration. The only tangible logging
