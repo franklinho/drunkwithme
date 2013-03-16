@@ -33,7 +33,7 @@ if(navigator.geolocation) {
         										 icon: leprechaun,
 										     });
 
-                         var activeInfoWindow;
+                         var activeInfoWindow = infowindow;
 
 						 {% for bar in bars %}
 						 var bar{{bar.id}}content ="<div style='font-weight:bold; font-family:aria,helvetica;'>"+
