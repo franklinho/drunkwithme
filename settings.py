@@ -146,7 +146,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 LOGIN_URL          = '/login/facebook/'
-FACEBOOK_EXTENDED_PERMISSIONS = ['publish_actions']
+FACEBOOK_EXTENDED_PERMISSIONS = []
 
 #Redis Cache required to keep application state.                                                                                                                                 
 CACHES = {
