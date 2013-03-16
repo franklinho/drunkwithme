@@ -36,6 +36,16 @@ if(navigator.geolocation) {
                          var activeInfoWindow = infowindow;
 
                          {% for user in user_profiles %}
+                         var user{{user.id}}content = "<div style='font-weight:bold; font-family:aria,helvetica;'>"+
+                                                        '<p>Level: {{user.level}}'+
+                                                        'Drinks Taken: {{user.num_drinks_consumed}}<br>'+
+                                                        'Rank: {{user.id}}<br>'+
+                                                        'Bars Checked In: {{user.num_bars_visited}}</p>'+
+                                                        '</div>';
+                        var user{{user.id}}infoWindow = new google.maps.InfoWindow({
+                                                        content: user{{user.id}}content
+                                                        });
+
 
                          var userPos{{user.id}}= new google.maps.LatLng({{user.latitude}},
                                                 {{user.longitude}});
@@ -47,6 +57,14 @@ if(navigator.geolocation) {
                                                  position: userPos{{user.id}},
                                                  icon: userImage{{user.id}},
                                              });
+                         google.maps.event.addListener(user{{user.id}}, 'click', function() {
+                                            if ( activeInfoWindow != user{{user.id}}.infoWindow ) {
+                                                activeInfoWindow.close();
+                                            }        
+                                            user{{user.id}}infoWindow.open(map,user{{user.id}});
+                                            activeInfoWindow = user{{user.id}}infoWindow;
+                                            });  
+
 
                          {% endfor %}
 
