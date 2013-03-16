@@ -36,9 +36,12 @@ if(navigator.geolocation) {
 						 {% for bar in bars %}
 						 var pos{{bar.id}} = new google.maps.LatLng({{bar.latitude}},
 											    {{bar.longitude}});
+                         var pinColor = "1FC219";
+                         var pinImage = "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor;
 						 var bar{{bar.id}} = new google.maps.Marker({
 											     map: map,
 											     position: pos{{bar.id}},
+                                                 icon: pinImage,
 											 });
 						 {% endfor %}
 
