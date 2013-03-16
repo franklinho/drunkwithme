@@ -27,15 +27,17 @@ function initialize() {
 					  $('#checkinmodal #success').show();
 				      });
 
+    a = $('#drinkbutton')
+
     $('#drinkbutton').click(function(event) {
 				event.preventDefault();
 				$('#drinkaudio')[0].play();
 				var value = $('#drinkoption').val();
+				d = '/drink-action/'+value+'/';
 				$.ajax({'url':'/drink-action/'+value+'/'});
 			    });
 
 
 }
 
-
-
+google.maps.event.addDomListener(window, 'load', initialize);

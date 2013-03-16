@@ -21,7 +21,7 @@ def set_location(request):
     return HttpResponse("OK")
 
 @login_required
-def drink_action(request,drink_id):
+def drink_action(request,drink_id=None):
     profile = request.user.get_profile()
     profile.num_drinks_consumed+=1
     profile.save()
