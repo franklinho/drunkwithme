@@ -33,7 +33,7 @@ if(navigator.geolocation) {
         										 icon: leprechaun,
 										     });
 
-                         var activeInfoWindow;
+                         var activeInfoWindow = infowindow;
 
 						 {% for bar in bars %}
 						 var bar{{bar.id}}content ="<div style='font-weight:bold; font-family:aria,helvetica;'>"+
@@ -67,7 +67,11 @@ if(navigator.geolocation) {
 
 						 map.setCenter(pos);
 						 google.maps.event.addListener(marker, 'click', function() {
+                                           if ( activeInfoWindow != infowindow ) {
+                                               activeInfoWindow.close();
+                                           }  
                                            infowindow.open(map,marker);
+                                           activeInfoWindow = infowindow;
 									       });            
 					     }, function() {
 						 handleNoGeolocation(true);
