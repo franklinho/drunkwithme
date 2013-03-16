@@ -55,7 +55,9 @@ if(navigator.geolocation) {
                                                  icon: pinImage,
 											 });
                         google.maps.event.addListener(bar{{bar.id}}, 'click', function() {
-                                           activeInfoWindow.close();
+                                           if ( activeInfoWindow != bar{{bar.id}}.infoWindow ) {
+                                               activeInfoWindow.close();
+                                           }        
                                            bar{{bar.id}}infoWindow.open(map,bar{{bar.id}});
                                            activeInfoWindow = bar{{bar.id}}infoWindow;
                                            });   
