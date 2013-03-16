@@ -5,6 +5,8 @@ var mapOptions = {
 map = new google.maps.Map(document.getElementById('map_canvas'),
 			  mapOptions);
 
+
+
 var leprechaun='/static/img/leprechaun7.png';
 
 var contentString ="<div style='font-weight:bold; font-family:aria,helvetica;'>"+
@@ -32,18 +34,34 @@ if(navigator.geolocation) {
 										     });
 
 						 {% for bar in bars %}
-						 var {{bar.id}}pos = new google.maps.LatLng({{bar.latitude}},
+						 var bar{{bar.id}}content ="<div style='font-weight:bold; font-family:aria,helvetica;'>"+
+                            '<p>{{bar.name}}<br>'+
+                            '{{bar.address}}</p>'+
+                            '</div>';
+
+                        var bar{{bar.id}}infoWindow = new google.maps.InfoWindow({
+                        content: bar{{bar.id}}content
+                        });
+
+                         var pos{{bar.id}} = new google.maps.LatLng({{bar.latitude}},
 											    {{bar.longitude}});
-						 var {{bar.id}} = new google.maps.Marker({
+                         var pinColor = "1FC219";
+                         var pinImage = "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor;
+						 var bar{{bar.id}} = new google.maps.Marker({
 											     map: map,
-											     position: {{bar.id}}pos,
+											     position: pos{{bar.id}},
+                                                 icon: pinImage,
 											 });
+                        google.maps.event.addListener(bar{{bar.id}}, 'click', function() {
+                                           infowindow.open(map,marker);
+                                           });   
+
 						 {% endfor %}
 
 
 						 map.setCenter(pos);
 						 google.maps.event.addListener(marker, 'click', function() {
-										   infowindow.open(map,marker);
+										   bar{{bar.id}}infoWindow.open(map,marker);
 									       });            
 					     }, function() {
 						 handleNoGeolocation(true);
@@ -71,3 +89,5 @@ function handleNoGeolocation(errorFlag) {
     var infowindow = new google.maps.InfoWindow(options);
     map.setCenter(options.position);
 }
+
+google.maps.event.addDomListener(window, 'load', initialize);
