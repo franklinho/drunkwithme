@@ -53,6 +53,7 @@ if(navigator.geolocation) {
                                                  icon: pinImage,
 											 });
                         google.maps.event.addListener(bar{{bar.id}}, 'click', function() {
+                                           bar{{bar.id}}infoWindow.setPosition(position:pos{{bar.id}});
                                            bar{{bar.id}}infoWindow.open(map,marker);
                                            });   
 
@@ -61,7 +62,7 @@ if(navigator.geolocation) {
 
 						 map.setCenter(pos);
 						 google.maps.event.addListener(marker, 'click', function() {
-										   infowindow.open(map,marker);
+                                           infowindow.open(map,marker);
 									       });            
 					     }, function() {
 						 handleNoGeolocation(true);
