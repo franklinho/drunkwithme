@@ -67,12 +67,13 @@
       #slidedownmenu ul {
         display:block;
         width:auto;
+        margin-left: 5px;
       }
 
       #slidedownmenu li {
         display:block;
         float:left;
-        margin:15px 17px;
+        margin:15px 30px;
         text-align:center;
         font-weight:bold;
         color:#fff;
