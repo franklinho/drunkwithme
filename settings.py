@@ -108,7 +108,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'mobile',
     'social_auth',
-    'south'
+    'south',
+    'gunicorn'
 )
 
 # A sample logging configuration. The only tangible logging
