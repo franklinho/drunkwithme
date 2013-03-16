@@ -61,11 +61,21 @@ function initialize() {
                                              position.coords.longitude);
 
             var marker = new google.maps.Marker({
-		map: map,
-		position: pos,
-		animation:google.maps.Animation.BOUNCE,
-		icon: leprechaun,
+        		map: map,
+        		position: pos,
+        		animation:google.maps.Animation.BOUNCE,
+        		icon: leprechaun,
             });
+
+            {% for bar in bars%}
+            var {{bar.id}}pos = new google.maps.LatLng({{bar.latitude}},
+                                             {{bar.longitude}});
+            var {{bar.id}} = new google.maps.Marker({
+                map: map,
+                position: {{bar.id}}pos,
+            });
+            {{% endfor %}}
+
 
             map.setCenter(pos);
             google.maps.event.addListener(marker, 'click', function() {
