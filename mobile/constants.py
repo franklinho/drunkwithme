@@ -5,13 +5,13 @@ LEVEL_CHOICES = (
 )
 
 LEVEL_DRINK_MAP = {
-    0,"shamrock",
-    1,"shamrock cow",
-    2,"shamrock sheep",
-    3,"bar of gold",
-    4,"pot of gold",
-    5,"leprechaun duck",
-    6,"leprechaun",
+    0,"Shamrock",
+    1,"Shamrock Cow",
+    2,"Shamrock Sheep",
+    3,"Bar of Gold",
+    4,"Pot of Gold",
+    5,"Leprechaun Duck",
+    6,"Leprechaun",
 }
 
 LEVEL_IMAGE_MAP = {
