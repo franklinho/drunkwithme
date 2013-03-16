@@ -1,6 +1,7 @@
 from django.db import models
 import json
 import time
+import facebook
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.core.cache import cache
@@ -34,6 +35,20 @@ class UserProfile(models.Model):
     user = models.ForeignKey(User)
     num_drinks_consumed = models.IntegerField(default=0)
     num_bars_visited = models.IntegerField(default=0)
+    first_name = models.CharField(max_length=128,null=True,blank=True)
+    last_name = models.CharField(max_length=128,null=True,blank=True)
+
+    @property
+    def full_name(self):
+        if not self.first_name or not self.last_name:
+            graph = facebook.GraphAPI(self.user.social_auth.all()[0].extra_data['access_token'])
+            profile = graph.get_object("me")
+            self.first_name = profile['first_name']
+            self.last_name = profile['last_name']
+            self.save()
+
+        return "%s %s" % (self.first_name,self.last_name)
+        
 
     @classmethod
     def get_or_create_user_profile(cls,user):
