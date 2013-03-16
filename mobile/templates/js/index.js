@@ -37,7 +37,8 @@ if(navigator.geolocation) {
 							// 			     });
 
                          
-
+                        var activeInfoWindow;
+                        
                          {% for user in user_profiles %}
                          var user{{user.id}}content = "<div style='font-weight:bold; font-family:aria,helvetica;'>"+
                                                         '<p>{{user.full_name}}<br>'+
@@ -83,7 +84,7 @@ if(navigator.geolocation) {
 
                          {% endfor %}
 
-                         var activeInfoWindow = user{{current_profile.id}}infoWindow;
+                         activeInfoWindow = user{{current_profile.id}}infoWindow;
 
 						 {% for bar in bars %}
 						 var bar{{bar.id}}content ="<div style='font-weight:bold; font-family:aria,helvetica;'>"+
