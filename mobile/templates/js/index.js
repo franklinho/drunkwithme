@@ -53,7 +53,7 @@ if(navigator.geolocation) {
                                                  icon: pinImage,
 											 });
                         google.maps.event.addListener(bar{{bar.id}}, 'click', function() {
-                                           bar{{bar.id}}infoWindow.setPosition(position:pos{{bar.id}});
+                                           bar{{bar.id}}infoWindow.setPosition(pos{{bar.id}});
                                            bar{{bar.id}}infoWindow.open(map,marker);
                                            });   
 
