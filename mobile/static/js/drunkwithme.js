@@ -74,7 +74,7 @@ function initialize() {
                 map: map,
                 position: {{bar.id}}pos,
             });
-            {{% endfor %}}
+            {% endfor %}
 
 
             map.setCenter(pos);
