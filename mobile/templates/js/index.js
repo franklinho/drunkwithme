@@ -16,9 +16,9 @@ map = new google.maps.Map(document.getElementById('map_canvas'),
 //     'Bars Checked In: 8</p>'+
 //     '</div>';
 
-var infowindow = new google.maps.InfoWindow({
-						content: contentString
-					    });
+// var infowindow = new google.maps.InfoWindow({
+// 						content: contentString
+// 					    });
 
 // Try HTML5 geolocation
 if(navigator.geolocation) {
