@@ -5,6 +5,15 @@ var mapOptions = {
 map = new google.maps.Map(document.getElementById('map_canvas'),
 			  mapOptions);
 
+   {% for bar in bars%}
+   var pos{{bar.id}} = new google.maps.LatLng({{bar.latitude}},
+                                    {{bar.longitude}});
+   var bar{{bar.id}} = new google.maps.Marker({
+       map: map,
+       position: pos{{bar.id}},
+   });
+   {% endfor %}
+
 var leprechaun='/static/img/leprechaun7.png';
 
 var contentString ="<div style='font-weight:bold; font-family:aria,helvetica;'>"+

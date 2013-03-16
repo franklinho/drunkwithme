@@ -15,19 +15,6 @@
        <img id="closebutton" src="{{STATIC_URL}}img/close.png" />
    </div>
 
-   <script>
-
-   {% for bar in bars%}
-   var pos{{bar.id}} = new google.maps.LatLng({{bar.latitude}},
-                                    {{bar.longitude}});
-   var bar{{bar.id}} = new google.maps.Marker({
-       map: map,
-       position: pos{{bar.id}},
-   });
-   {% endfor %}
-
-   
-   </script>
 
 {% endblock %}
 
