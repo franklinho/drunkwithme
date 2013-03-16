@@ -34,7 +34,16 @@ if(navigator.geolocation) {
 										     });
 
 						 {% for bar in bars %}
-						 var pos{{bar.id}} = new google.maps.LatLng({{bar.latitude}},
+						 var bar{{bar.id}}content ="<div style='font-weight:bold; font-family:aria,helvetica;'>"+
+                            '<p>{{bar.name}}<br>'+
+                            '{{bar.address}}</p>'+
+                            '</div>';
+
+                        var bar{{bar.id}}infoWindow = new google.maps.InfoWindow({
+                        content: bar{{bar.id}}content
+                        });
+
+                         var pos{{bar.id}} = new google.maps.LatLng({{bar.latitude}},
 											    {{bar.longitude}});
                          var pinColor = "1FC219";
                          var pinImage = "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor;
@@ -43,12 +52,16 @@ if(navigator.geolocation) {
 											     position: pos{{bar.id}},
                                                  icon: pinImage,
 											 });
+                        google.maps.event.addListener(bar{{bar.id}}, 'click', function() {
+                                           infowindow.open(map,marker);
+                                           });   
+
 						 {% endfor %}
 
 
 						 map.setCenter(pos);
 						 google.maps.event.addListener(marker, 'click', function() {
-										   infowindow.open(map,marker);
+										   bar{{bar.id}}infoWindow.open(map,marker);
 									       });            
 					     }, function() {
 						 handleNoGeolocation(true);
