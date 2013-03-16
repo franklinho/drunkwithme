@@ -25,7 +25,10 @@
     </div>    
    {% block body %}
    {% endblock %}
-    {% block extrascripts %}    
+    {% block extrascripts %} 
+    <script>
+    {% include "js/index.js"%}
+    </script>   
     {% endblock %}
   </body>
 </html>
