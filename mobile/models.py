@@ -33,6 +33,7 @@ class Bar(models.Model):
 class UserProfile(models.Model):
     user = models.ForeignKey(User)
     num_drinks_consumed = models.IntegerField(default=0)
+    num_bars_visited = models.IntegerField(default=0)
 
     @classmethod
     def get_or_create_user_profile(cls,user):

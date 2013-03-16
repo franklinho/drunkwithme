@@ -23,6 +23,8 @@ def checkin_action(request,bar_id):
     bar = get_object_or_404(Bar,pk=bar_id)
     profile = UserProfile.get_or_create_profile(request.user)
     profile.set_location(bar.latitude,bar.longitude)
+    profile.num_bars_visited+=1
+    profile.save()
     return HttpResponse("OK")
     
 @login_required
