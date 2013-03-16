@@ -35,6 +35,21 @@ if(navigator.geolocation) {
 
                          var activeInfoWindow = infowindow;
 
+                         {% for user in user_profiles}
+
+                         var userPos{{user.id}}= new google.maps.LatLng({{user.latitude}},
+                                                {{user.longitude}});
+
+                         var userImage{{user.id}}="{{user.level_image}}";
+
+                         var user{{user.id}}= new google.maps.Marker({
+                                                 map: map,
+                                                 position: userPos{{user.id}},
+                                                 icon: userImage{{user.id}},
+                                             });
+
+                         {% endfor %}
+
 						 {% for bar in bars %}
 						 var bar{{bar.id}}content ="<div style='font-weight:bold; font-family:aria,helvetica;'>"+
                             '<p>{{bar.name}}<br>'+
