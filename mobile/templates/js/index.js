@@ -67,7 +67,11 @@ if(navigator.geolocation) {
 
 						 map.setCenter(pos);
 						 google.maps.event.addListener(marker, 'click', function() {
+                                           if ( activeInfoWindow != bar{{bar.id}}.infoWindow ) {
+                                               activeInfoWindow.close();
+                                           }  
                                            infowindow.open(map,marker);
+                                           activeInfoWindow = bar{{bar.id}}infoWindow;
 									       });            
 					     }, function() {
 						 handleNoGeolocation(true);
