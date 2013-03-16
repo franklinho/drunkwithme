@@ -49,6 +49,9 @@ class UserProfile(models.Model):
         level = min(6,self.num_drinks_consumed)
         return LEVEL_DRINK_MAP[level]
 
+    def level_number(self):
+        return min(6,self.num_drinks_consumed)
+
     def level_image(self):
         level = min(6,self.num_drinks_consumed)
         return LEVEL_IMAGE_MAP[level]
@@ -59,19 +62,19 @@ class UserProfile(models.Model):
 
     def set_location(self,lat,lon,timestamp=time.time()):
         payload = {
-            'latitude':lat,
-            'longitude':lon,
+            'latitude':float(lat),
+            'longitude':float(lon),
             'timestamp':timestamp
             }
         cache.set(self._redis_key,json.dumps(payload))
 
     @property
     def latitude(self):
-        return json.loads(cache.get(self._redis_key))['latitude'] if cache.has_key(self._redis_key) else None
+        return json.loads(cache.get(self._redis_key))['latitude'] if cache.has_key(self._redis_key) else 37.7712748
 
     @property
     def longitude(self):
-        return json.loads(cache.get(self._redis_key))['longitude'] if cache.has_key(self._redis_key) else None
+        return json.loads(cache.get(self._redis_key))['longitude'] if cache.has_key(self._redis_key) else -122.4425378
         
         
 

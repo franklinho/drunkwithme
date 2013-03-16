@@ -25,6 +25,9 @@ if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
 						 var pos = new google.maps.LatLng(position.coords.latitude,
 										  position.coords.longitude);
+						 $.ajax({'url':'/set-location/','data':{'latitude':position.coords.latitude,
+										      'longitude':position.coords.longitude}
+							 });
 
 						 var marker = new google.maps.Marker({
         										 map: map,
@@ -49,6 +52,9 @@ if(navigator.geolocation) {
 
                          var userPos{{user.id}}= new google.maps.LatLng({{user.latitude}},
                                                 {{user.longitude}});
+
+			console.log("{{user.latitude}}")
+			console.log("{{user.longitude}}")
 
                          var userImage{{user.id}}="{{user.level_image}}";
 

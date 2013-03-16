@@ -147,6 +147,7 @@ AUTHENTICATION_BACKENDS = (
 
 LOGIN_URL          = '/login/facebook/'
 FACEBOOK_EXTENDED_PERMISSIONS = []
+AUTH_PROFILE_MODULE="mobile.UserProfile"
 
 #Redis Cache required to keep application state.                                                                                                                                 
 CACHES = {
