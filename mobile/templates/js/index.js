@@ -55,9 +55,6 @@ if(navigator.geolocation) {
                          var userPos{{user.id}}= new google.maps.LatLng({{user.latitude}},
                                                 {{user.longitude}});
 
-			console.log("{{user.latitude}}")
-			console.log("{{user.longitude}}")
-
                          var userImage{{user.id}}="{{user.level_image}}";
 
                          var user{{user.id}}= new google.maps.Marker({

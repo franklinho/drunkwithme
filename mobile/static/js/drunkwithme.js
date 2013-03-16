@@ -27,8 +27,6 @@ function initialize() {
 					  $('#checkinmodal #success').show();
 				      });
 
-    a = $('#drinkbutton')
-
     $('#drinkbutton').click(function(event) {
 				event.preventDefault();
 				$('#drinkaudio')[0].play();

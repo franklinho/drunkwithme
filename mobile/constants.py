@@ -14,8 +14,8 @@ LEVEL_IMAGE_MAP = {
     0:"%simg/shamrock1.png" % settings.STATIC_URL,
     1:"%simg/shamrockcow2.png" % settings.STATIC_URL,
     2:"%simg/shamrocksheep3.png" % settings.STATIC_URL,
-    3:"%sbarofgold4.png" % settings.STATIC_URL,
-    4:"%spotofgold5.png" % settings.STATIC_URL,
-    5:"%sleprechaunduck6.png" % settings.STATIC_URL,
-    6:"%sleprechaun7.png" % settings.STATIC_URL,
+    3:"%simg/barofgold4.png" % settings.STATIC_URL,
+    4:"%simg/potofgold5.png" % settings.STATIC_URL,
+    5:"%simg/leprechaunduck6.png" % settings.STATIC_URL,
+    6:"%simg/leprechaun7.png" % settings.STATIC_URL,
 }
