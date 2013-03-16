@@ -35,7 +35,7 @@ if(navigator.geolocation) {
 
                          var activeInfoWindow = infowindow;
 
-                         {% for user in user_profiles}
+                         {% for user in user_profiles %}
 
                          var userPos{{user.id}}= new google.maps.LatLng({{user.latitude}},
                                                 {{user.longitude}});
