@@ -36,7 +36,7 @@ if(navigator.geolocation) {
        //  										 icon: leprechaun,
 							// 			     });
 
-                         // var activeInfoWindow = infowindow;
+                         
 
                          {% for user in user_profiles %}
                          var user{{user.id}}content = "<div style='font-weight:bold; font-family:aria,helvetica;'>"+
@@ -82,6 +82,8 @@ if(navigator.geolocation) {
 
 
                          {% endfor %}
+
+                         var activeInfoWindow = user{{current_profile.id}}infoWindow;
 
 						 {% for bar in bars %}
 						 var bar{{bar.id}}content ="<div style='font-weight:bold; font-family:aria,helvetica;'>"+
