@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def index(request):
     bars = Bar.objects.all().order_by("name")
-    return render_to_response("HelloMap.html",{'bars':bars},RequestContext(request))
+    return render_to_response("index.html",{'bars':bars},RequestContext(request))
 
 @login_required
 def drink_action(request,drink_id):
@@ -27,10 +27,6 @@ def checkin_action(request,bar_id):
     return HttpResponse("OK")
     
 @login_required
-def map(request):
-    return render_to_response("HelloMap.html",{},RequestContext(request))
-
-@login_required
 def drink(request):
     drink_options = Drink.objects.all().order_by("name")
     return render_to_response("Drink.html",{'drink_options':drink_options},RequestContext(request))
@@ -42,3 +38,6 @@ def rank(request):
 @login_required
 def stats(request):
     return HttpResponse("Not Implemented Yet")
+
+def privacy(request):
+    return render_to_response("privacy.html",{},RequestContext(request))
