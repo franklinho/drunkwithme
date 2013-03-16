@@ -4,7 +4,7 @@
 <div id="ranking">
   <dl>
     {% for profile in user_profiles %}
-    <dt>{{forloop.counter}}. {{profile.user.username}}</dt>
+    <dt>{{forloop.counter}}. {{profile.full_name}}</dt>
     <dd>Drinks:{{profile.num_drinks_consumed}} Bars:{{profile.num_bars_visited}}</dd>
     {% endfor %}
   </dl>
