@@ -34,7 +34,10 @@ def drink(request):
 
 @login_required
 def rank(request):
-    return render_to_response("Rank.html",{},RequestContext(request))
+    user_profiles = UserProfile.objects.all().order_by("-num_drinks_consumed")
+    return render_to_response("Rank.html",
+                              {'user_profiles':user_profiles},
+                              RequestContext(request))
 
 @login_required
 def stats(request):

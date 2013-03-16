@@ -74,3 +74,12 @@ class UserProfile(models.Model):
         return json.loads(cache.get(self._redis_key))['longitude'] if cache.has_key(self._redis_key) else None
         
         
+
+from django.db.models.signals import post_save
+
+# User
+def user_post_save(sender, instance, signal, *args, **kwargs):
+    # Creates user profile
+    profile, new = UserProfile.objects.get_or_create(user=instance)
+
+post_save.connect(user_post_save,sender=User)

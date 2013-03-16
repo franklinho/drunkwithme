@@ -1,34 +1,20 @@
 {% extends "base.html" %}
 
 {% block body %}
-	<div id="ranking">
-		<dl>
-			<dt>1. Franklin Ho</dt>
-				<dd>Drinks:7 Bars:5</dd>
-			<dt>2. Diane Lu</dt>
-				<dd>Drinks:6 Bars:5</dd>
-			<dt>3. Rob McQueen</dt>
-				<dd>Drinks:5 Bars:5</dd>
-			<dt>4. Sally Graglia</dt>
-				<dd>Drinks:4 Bars:5</dd>
-			<dt>5. Rocio Avalos</dt>
-				<dd>Drinks:3 Bars:5</dd>
-		</dl>
-	</div>
-	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script>
-		(function(){
-			$('dd').filter(':nth-child(n+4)').addClass('hide');
-
-			$('dl').on('mouseenter','dt', function(){
-				var $this = $(this);
-				$this
-					.next()
-						.slideDown(200)
-						.siblings('dd')
-							.slideUp(200);
-			});
-		})();
-	</script>
+<div id="ranking">
+  <dl>
+    {% for profile in user_profiles %}
+    <dt>{{forloop.counter}}. {{profile.user.username}}</dt>
+    <dd>Drinks:{{profile.num_drinks_consumed}} Bars:{{profile.num_bars_viisted}}</dd>
+    {% endfor %}
+  </dl>
+</div>
 {% endblock %}
+
+{% block extrascripts %}
+<script>
+  {% include "js/rank.js" %}
+</script>
+{% endblock %}
+
+
