@@ -49,6 +49,9 @@ class UserProfile(models.Model):
         level = min(6,self.num_drinks_consumed)
         return LEVEL_DRINK_MAP[level]
 
+    def level_number(self):
+        return min(6,self.num_drinks_consumed)
+
     def level_image(self):
         level = min(6,self.num_drinks_consumed)
         return LEVEL_IMAGE_MAP[level]
