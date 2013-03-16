@@ -38,7 +38,7 @@ if(navigator.geolocation) {
 						 {% for bar in bars %}
 						 var bar{{bar.id}}content ="<div style='font-weight:bold; font-family:aria,helvetica;'>"+
                             '<p>{{bar.name}}<br>'+
-                            '{{bar.address}}</p>'+
+                            '<a href="http://maps.google.com/maps?q={{bar.address}}&hq={{bar.name}}">{{bar.address}}</a></p>'+
                             '</div>';
 
                         var bar{{bar.id}}infoWindow = new google.maps.InfoWindow({
