@@ -12,5 +12,13 @@
       "name" : "Guiness",
       "image" : "carbomb.jpg"
     }
+    {
+      "name" : "Bailey's",
+      "image" : "carbomb.jpg"
+    }
+    {
+      "name" : "Other",
+      "image" : "carbomb.jpg"
+    }
   ]  
 }
