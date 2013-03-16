@@ -32,11 +32,11 @@ if(navigator.geolocation) {
 										     });
 
 						 {% for bar in bars %}
-						 var {{bar.id}}pos = new google.maps.LatLng({{bar.latitude}},
+						 var pos{{bar.id}} = new google.maps.LatLng({{bar.latitude}},
 											    {{bar.longitude}});
 						 var {{bar.id}} = new google.maps.Marker({
 											     map: map,
-											     position: {{bar.id}}pos,
+											     position: pos{{bar.id}},
 											 });
 						 {% endfor %}
 
