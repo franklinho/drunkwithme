@@ -40,7 +40,7 @@ if(navigator.geolocation) {
 
                          {% for user in user_profiles %}
                          var user{{user.id}}content = "<div style='font-weight:bold; font-family:aria,helvetica;'>"+
-                                                        '<p>Level: {{user.level}}'+
+                                                        '<p>Level: {{user.level}}<br>'+
                                                         'Drinks Taken: {{user.num_drinks_consumed}}<br>'+
                                                         'Rank: {{user.id}}<br>'+
                                                         'Bars Checked In: {{user.num_bars_visited}}</p>'+
