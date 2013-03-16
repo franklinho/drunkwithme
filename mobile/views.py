@@ -8,8 +8,9 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
+    user_profiles = UserProfile.objects.all().order_by("-num_drinks_consumed")
     bars = Bar.objects.all().order_by("name")
-    return render_to_response("index.html",{'bars':bars},RequestContext(request))
+    return render_to_response("index.html",{'bars':bars, 'user_profiles':user_profiles},RequestContext(request))
 
 @login_required
 def drink_action(request,drink_id):
