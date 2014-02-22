@@ -108,8 +108,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'mobile',
     'social_auth',
-    'south',
-    'gunicorn'
+    'south'
 )
 
 # A sample logging configuration. The only tangible logging
@@ -149,7 +148,7 @@ LOGIN_URL          = '/login/facebook/'
 FACEBOOK_EXTENDED_PERMISSIONS = []
 AUTH_PROFILE_MODULE="mobile.UserProfile"
 
-#Redis Cache required to keep application state.                                                                                                                                 
+#Redis Cache required to keep application state.
 CACHES = {
     "default": {
         "BACKEND": "redis_cache.cache.RedisCache",
@@ -160,9 +159,17 @@ CACHES = {
     }
 }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(dir_path, 'db.sqlite3'),
+    }
+}
+
+
 try:
     from local_settings import *
-except Exception:
-    print "Failed to import local settings. exiting"
+except:
+    print "failed to import local settings"
     import sys
     sys.exit()
