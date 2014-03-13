@@ -61,14 +61,14 @@ class UserProfile(models.Model):
         return profile
 
     def level(self):
-        level = min(6,self.num_drinks_consumed)
+        level = min(19,self.num_drinks_consumed)
         return LEVEL_DRINK_MAP[level]
 
     def level_number(self):
-        return min(6,self.num_drinks_consumed)+1
+        return min(19,self.num_drinks_consumed)+1
 
     def level_image(self):
-        level = min(6,self.num_drinks_consumed)
+        level = min(19,self.num_drinks_consumed)
         return LEVEL_IMAGE_MAP[level]
 
     @property
