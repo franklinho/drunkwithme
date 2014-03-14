@@ -1,7 +1,7 @@
 
 // MENU
 var menu;
- 
+
 function loaded() {
     document.addEventListener('touchmove', function(e){ e.preventDefault(); e.stopPropagation(); });
     menu = new slideInMenu('slidedownmenu', false);
@@ -25,6 +25,7 @@ function initialize() {
 					  var value = $('#baroption').val();
 					  $.ajax({'url':'/checkin-action/'+value+'/'});
 					  $('#checkinmodal #success').show();
+	                                  setTimeout(function() {$("#checkinmodal").hide(); }, 1000);
 				      });
 
     $('#drinkbutton').click(function(event) {
