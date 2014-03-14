@@ -1,7 +1,6 @@
-from django.db import models
 import json
-import time
-import facebook
+
+from django.db import models
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.core.cache import cache
@@ -13,7 +12,7 @@ from mobile.constants import (LEVEL_DRINK_MAP,
 class Drink(models.Model):
     name=models.CharField(max_length=256)
     image = models.ImageField(upload_to="drinks")
-    
+
     @property
     def facebook_object_url(self):
         return reverse("main_objects_drink",kwargs={'drink_id':self.id})
@@ -25,7 +24,6 @@ class Bar(models.Model):
     latitude = models.FloatField()
     longitude = models.FloatField()
     priority = models.IntegerField()
-
 
     @property
     def facebook_object_url(self):
@@ -40,25 +38,7 @@ class UserProfile(models.Model):
 
     @property
     def full_name(self):
-        if not self.first_name or not self.last_name:
-            graph = facebook.GraphAPI(self.user.social_auth.all()[0].extra_data['access_token'])
-            profile = graph.get_object("me")
-            self.first_name = profile['first_name']
-            self.last_name = profile['last_name']
-            self.save()
-
-        return "%s %s" % (self.first_name,self.last_name)
-        
-
-    @classmethod
-    def get_or_create_user_profile(cls,user):
-        try:
-            profile = cls.objects.get(user=user)
-        except cls.DoesNotExist:
-            profile = cls(user=user)
-            profile.save()
-
-        return profile
+        return " ".join([self.first_name, self.last_name])
 
     def level(self):
         level = min(19,self.num_drinks_consumed)
@@ -75,7 +55,7 @@ class UserProfile(models.Model):
     def _redis_key(self):
         return "%s:::%s" % (self.user.id,self.id)
 
-    def set_location(self,lat,lon,timestamp=time.time()):
+    def set_location(self,lat,lon,timestamp):
         payload = {
             'latitude':float(lat),
             'longitude':float(lon),
@@ -90,14 +70,3 @@ class UserProfile(models.Model):
     @property
     def longitude(self):
         return json.loads(cache.get(self._redis_key))['longitude'] if cache.has_key(self._redis_key) else -122.4425378
-        
-        
-
-from django.db.models.signals import post_save
-
-# User
-def user_post_save(sender, instance, signal, *args, **kwargs):
-    # Creates user profile
-    profile, new = UserProfile.objects.get_or_create(user=instance)
-
-post_save.connect(user_post_save,sender=User)
