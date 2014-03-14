@@ -7,7 +7,7 @@
 
     <script type="text/javascript" src="{{STATIC_URL}}js/slideinmenu.js"></script>
    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXbLTiAjkARVoImvIhrT665H1TocU7vEg&sensor=true"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{GOOGLEMAPS_APIKEY}}&sensor=true"></script>
     <script src="{{STATIC_URL}}js/drunkwithme.js"></script>
     <link href="{{STATIC_URL}}css/drunkwithme.css" rel="stylesheet" />
   </head>
@@ -19,15 +19,15 @@
             <li><a href="{% url 'mobile_index' %}"><img src="{{STATIC_URL}}img/map.png" width="40" height="40" alt="" />Map</a></li>
             <li><a href="{% url 'mobile_drink' %}"><img src="{{STATIC_URL}}img/carbomb.png" width="40" height="40" alt="" />Drink</a></li>
             <li><a href="{% url 'rank' %}"><img src="{{STATIC_URL}}img/rank.png" width="40" height="40" alt="" />Rank</a></li>
-          </ul> 
+          </ul>
           <div class="handle"></div>
-    </div>    
+    </div>
    {% block body %}
    {% endblock %}
-    {% block extrascripts %} 
+    {% block extrascripts %}
     <script>
     {% include "js/index.js"%}
-    </script>   
+    </script>
     {% endblock %}
   </body>
 </html>

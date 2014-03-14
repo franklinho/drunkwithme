@@ -5,3 +5,4 @@ myenv
 media/.+
 local_settings.py
 main/migrations
+db.sqlite3
