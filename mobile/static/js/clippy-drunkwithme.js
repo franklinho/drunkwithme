@@ -6,8 +6,19 @@ $(document).ready(function() {
     var clippyMessages = [
 	"Wow. much DrunkWithMe. very drink",
 	"hmmm, I'd go for the car bomb.",
-	"Is there something I can help you with?",
-	"I can't believe this got rejected from the App Store"
+	"I can't believe this got rejected from the App Store",
+	"Your drink better have whiskey in it.",
+	"Happy St. Patrick's Day!",
+	"Go find someone not wearing green and pinch them.",
+	"DRINKING CHALLENGE! Challenge current leader to an Irish Car Bomb.",
+	"Top of the morning to you!",
+	"Have you had a car bomb today?",
+	"Rob, Diane and Franklin are so smart.",
+	"Poor decisions hurt more than a hangover. Drink Responsibly.",
+	"How about a glass of water? Drink Responsibly.",
+	"We don't actually have a legal team. Please Drink Responsibly.",
+	"I can't believe this got rejected by the App Store!",
+	"WTF Rob. Marketing never approved me!!"
     ];
 
     if (shouldShowClippy()) {
