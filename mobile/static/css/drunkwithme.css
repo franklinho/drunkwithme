@@ -263,6 +263,8 @@
           font-family:arial,helvetica;
           font-weight:bold;
           position:relative;
+          overflow:scroll;
+          -webkit-overflow-scrolling:touch;
           top:13px;
       }
 
