@@ -9,7 +9,7 @@ dir_path = os.path.normpath(os.path.dirname(os.path.abspath(__file__)))
 class Command(BaseCommand):
     def handle(self, *args, **options):
         file = open("%s/BarLocations.csv" % dir_path,"rb")
-        lines = file.read().split("\n")
+        lines = file.read().split("\r")
         for line in lines:
             data = [l.replace("\r","") for l in line.split(",")]
             if not Bar.objects.filter(name=data[0]).exists():

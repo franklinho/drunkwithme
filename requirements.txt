@@ -1,6 +1,6 @@
 Django==1.6.2
 Facebook==0.0
-PIL==1.1.7
+Pillow==3.1.1
 South==0.8.4
 gunicorn==18.0
 httplib2==0.8
